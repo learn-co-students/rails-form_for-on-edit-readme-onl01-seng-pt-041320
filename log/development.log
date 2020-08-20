@@ -761,3 +761,53 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+Started GET "/posts/1/edit" for ::1 at 2020-08-20 14:23:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (420.9ms)
+Completed 200 OK in 3800ms (Views: 3614.0ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-08-20 14:24:04 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HeXFo/cO9dUZvSNxc1d9GVW1RSR9/zUZJimFO843Zz3etUsROETncN4hRARhYdj95bMyua+pXp2okaAFmm8AFw==", "post"=>{"title"=>"Rails Introduction Quiz-0-Rammaaa!!!", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (44.4ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2020-08-20 21:24:04.366282"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 71ms (ActiveRecord: 46.4ms)
+
+
+Started GET "/posts/1" for ::1 at 2020-08-20 14:24:04 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 114ms (Views: 99.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-08-20 14:27:34 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HeXFo/cO9dUZvSNxc1d9GVW1RSR9/zUZJimFO843Zz3etUsROETncN4hRARhYdj95bMyua+pXp2okaAFmm8AFw==", "post"=>{"title"=>"Rails Introduction Quiz-0-Rammaaa!!!", "description"=>"asdfasdf--but really?"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "{\"title\"=>\"Rails Introduction Quiz-0-Rammaaa!!!\", \"description\"=>\"asdfasdf--but really?\"}"], ["updated_at", "2020-08-20 21:27:34.466621"], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 14ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/1" for ::1 at 2020-08-20 14:27:34 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 96ms (Views: 90.6ms | ActiveRecord: 0.1ms)
+
+
